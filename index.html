@@ -93,7 +93,7 @@
         /* Fallback untuk Mobile/Low Power Mode */
         .video-fallback {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            /* Gradient biru gelap sesuai tema */
+            /* Gradient biru gelap sesuai tema forest */
             background: radial-gradient(circle at center, #0f2e46 0%, #020617 100%);
             z-index: -3;
         }
@@ -150,8 +150,9 @@
         <div class="video-fallback"></div>
         
         <!-- Video hanya akan di-inject via JS jika bukan Mobile agar performa maksimal -->
+        <!-- Video ID sesuai permintaan: whispering-lights-forest.3840x2160.mp4 -->
         <video id="bg-video" autoplay muted loop playsinline style="display:none;">
-            <!-- Source diset lewat JS -->
+            <!-- Source akan di-inject oleh JS untuk kontrol performa -->
         </video>
         
         <!-- Overlay hitam transparan -->
@@ -545,7 +546,7 @@
             if (!isMobile) {
                 // Only inject source on desktop to prevent mobile lag
                 const source = document.createElement('source');
-                // UPDATE: Menggunakan video whispering-lights-forest
+                // UPDATE: Menggunakan video whispering-lights-forest sesuai permintaan (nama file disesuaikan persis)
                 source.src = 'whispering-lights-forest.3840x2160.mp4';
                 source.type = 'video/mp4';
                 video.appendChild(source);
